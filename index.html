@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Application Form - SPARK CDB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Training Application Form</h1>
+            <p class="subtitle">Please fill in all required fields marked with <span class="required">*</span></p>
+        </header>
+
+        <div class="alert alert-info">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div>
+                <strong>Before submitting:</strong> Please ensure all information is accurate and all required documents are ready for upload.
+            </div>
+        </div>
+
+        <form id="applicationForm" class="application-form" novalidate>
+            <!-- Personal Information Section -->
+            <section class="form-section">
+                <h2 class="section-title">Personal Information</h2>
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required 
+                           placeholder="Enter your full name as per NRIC">
+                    <span class="error-message" id="fullName-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="nric">NRIC/Passport Number <span class="required">*</span></label>
+                    <input type="text" id="nric" name="nric" required 
+                           placeholder="e.g., S1234567A or G1234567X">
+                    <span class="error-message" id="nric-error"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact">Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="contact" name="contact" required 
+                               placeholder="+65 XXXX XXXX">
+                        <span class="error-message" id="contact-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="your.email@example.com">
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Residential Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" required 
+                              placeholder="Enter your complete residential address"></textarea>
+                    <span class="error-message" id="address-error"></span>
+                </div>
+            </section>
+
+            <!-- Course Selection Section -->
+            <section class="form-section">
+                <h2 class="section-title">Course Information</h2>
+                
+                <div class="form-group">
+                    <label for="course">Select Course <span class="required">*</span></label>
+                    <select id="course" name="course" required>
+                        <option value="">-- Select a course --</option>
+                        <option value="Basic Computer Skills">Basic Computer Skills</option>
+                        <option value="Microsoft Office Suite">Microsoft Office Suite</option>
+                        <option value="Web Development Fundamentals">Web Development Fundamentals</option>
+                        <option value="Digital Marketing Essentials">Digital Marketing Essentials</option>
+                        <option value="Data Analytics & Excel">Data Analytics & Excel</option>
+                        <option value="Graphic Design with Adobe">Graphic Design with Adobe</option>
+                        <option value="Project Management">Project Management</option>
+                        <option value="Cybersecurity Basics">Cybersecurity Basics</option>
+                        <option value="Cloud Computing Introduction">Cloud Computing Introduction</option>
+                        <option value="Business Communication">Business Communication</option>
+                    </select>
+                    <span class="error-message" id="course-error"></span>
+                </div>
+            </section>
+
+            <!-- Document Upload Section -->
+            <section class="form-section">
+                <h2 class="section-title">Required Documents</h2>
+                <p class="section-description">Please upload certified copies of the following documents (PDF, JPG, or PNG format, max 5MB each):</p>
+                
+                <div class="upload-grid">
+                    <div class="form-group upload-group">
+                        <label for="nricFront">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
+                            NRIC Front Copy <span class="required">*</span>
+                        </label>
+                        <input type="file" id="nricFront" name="nricFront" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <span class="file-name" id="nricFront-filename">No file chosen</span>
+                        <span class="error-message" id="nricFront-error"></span>
+                    </div>
+
+                    <div class="form-group upload-group">
+                        <label for="nricBack">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
+                            NRIC Back Copy <span class="required">*</span>
+                        </label>
+                        <input type="file" id="nricBack" name="nricBack" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <span class="file-name" id="nricBack-filename">No file chosen</span>
+                        <span class="error-message" id="nricBack-error"></span>
+                    </div>
+
+                    <div class="form-group upload-group">
+                        <label for="birthCert">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
+                            Birth Certificate <span class="required">*</span>
+                        </label>
+                        <input type="file" id="birthCert" name="birthCert" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <span class="file-name" id="birthCert-filename">No file chosen</span>
+                        <span class="error-message" id="birthCert-error"></span>
+                    </div>
+
+                    <div class="form-group upload-group">
+                        <label for="bankStatement">
+                            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
+                            Bank Statement <span class="required">*</span>
+                        </label>
+                        <input type="file" id="bankStatement" name="bankStatement" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <span class="file-name" id="bankStatement-filename">No file chosen</span>
+                        <span class="error-message" id="bankStatement-error"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Terms and Conditions -->
+            <section class="form-section">
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span>I confirm that all information provided is accurate and I have read and agree to the terms and conditions <span class="required">*</span></span>
+                    </label>
+                    <span class="error-message" id="terms-error"></span>
+                </div>
+            </section>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Submit Application
+                </button>
+            </div>
+        </form>
+
+        <!-- Success Message (Hidden by default) -->
+        <div class="alert alert-success" id="successMessage" style="display: none;">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div>
+                <strong>Success!</strong> Your application has been submitted successfully. You will receive a confirmation email shortly.
+            </div>
+        </div>
+
+        <!-- Error Message (Hidden by default) -->
+        <div class="alert alert-error" id="errorMessage" style="display: none;">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div>
+                <strong>Error!</strong> There was a problem submitting your application. Please try again or contact support.
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 SPARK CDB. All rights reserved.</p>
+        <p>For assistance, please contact us at <a href="mailto:support@sparkcdb.org">support@sparkcdb.org</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
