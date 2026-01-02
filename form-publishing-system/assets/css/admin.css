@@ -1,0 +1,358 @@
+/**
+ * Form Publishing System - Admin Styles
+ * 
+ * @package FormPublishingSystem
+ * @since 1.0.0
+ */
+
+/* Admin Page Layout */
+.form-publishing-admin {
+    padding: 20px;
+}
+
+.form-publishing-admin .wp-heading-inline {
+    margin-right: 15px;
+}
+
+/* Statistics Cards */
+.form-publishing-stats {
+    margin: 30px 0;
+}
+
+.form-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 600;
+    color: #2271b1;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card.stat-published .stat-number {
+    color: #00a32a;
+}
+
+.stat-card.stat-draft .stat-number {
+    color: #dba617;
+}
+
+.stat-card.stat-scheduled .stat-number {
+    color: #2271b1;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.status-draft {
+    background: #f0f0f1;
+    color: #646970;
+}
+
+.status-badge.status-published {
+    background: #d7f4dd;
+    color: #007017;
+}
+
+.status-badge.status-unpublished {
+    background: #fcf0f1;
+    color: #d63638;
+}
+
+.status-badge.status-scheduled {
+    background: #e5f5fa;
+    color: #006ba1;
+}
+
+/* Table Styles */
+.form-publishing-admin table.wp-list-table {
+    margin-top: 20px;
+}
+
+.form-publishing-admin table.wp-list-table th {
+    font-weight: 600;
+}
+
+.form-publishing-admin table.wp-list-table td {
+    vertical-align: middle;
+}
+
+.form-publishing-admin table.wp-list-table .button-small {
+    padding: 4px 10px;
+    height: auto;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+/* Action Links */
+.view-history {
+    color: #2271b1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-history:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.form-publishing-modal {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #dcdcde;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.modal-close {
+    color: #646970;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #000;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid #dcdcde;
+    text-align: right;
+}
+
+/* History Timeline */
+.history-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dcdcde;
+}
+
+.history-item {
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 30px;
+}
+
+.history-item::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2271b1;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #2271b1;
+}
+
+.history-item.action-published::before {
+    background: #00a32a;
+    box-shadow: 0 0 0 2px #00a32a;
+}
+
+.history-item.action-unpublished::before {
+    background: #d63638;
+    box-shadow: 0 0 0 2px #d63638;
+}
+
+.history-item-header {
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 5px;
+}
+
+.history-item-meta {
+    font-size: 12px;
+    color: #646970;
+    margin-bottom: 5px;
+}
+
+.history-item-notes {
+    font-size: 13px;
+    color: #3c434a;
+    font-style: italic;
+}
+
+/* Form Builder */
+.form-builder {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.form-builder-field {
+    margin-bottom: 20px;
+}
+
+.form-builder-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-builder-field input[type="text"],
+.form-builder-field input[type="email"],
+.form-builder-field input[type="date"],
+.form-builder-field input[type="datetime-local"],
+.form-builder-field textarea,
+.form-builder-field select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-builder-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-builder-field .description {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .form-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .form-publishing-admin table.wp-list-table {
+        font-size: 13px;
+    }
+}
+
+/* Loading Spinner */
+.form-publishing-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0,0,0,.1);
+    border-radius: 50%;
+    border-top-color: #2271b1;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.form-publishing-message {
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.form-publishing-message.success {
+    background: #d7f4dd;
+    color: #007017;
+    border-left: 4px solid #00a32a;
+}
+
+.form-publishing-message.error {
+    background: #fcf0f1;
+    color: #d63638;
+    border-left: 4px solid #d63638;
+}
+
+.form-publishing-message.info {
+    background: #e5f5fa;
+    color: #006ba1;
+    border-left: 4px solid #2271b1;
+}
